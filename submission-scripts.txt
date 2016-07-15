@@ -1,0 +1,17 @@
+spark-submit --class com.intersysconsulting.spark.streaming.textfile.WordCountTextFile --master yarn --deploy-mode client /Users/vmiller/Projects/spark-streaming-java/target/spark-streaming-java-1.0-SNAPSHOT.jar /Users/vmiller/Projects/spark-streaming-java/src/main/resources/sample.txt yarn-client
+
+
+sudo su - hdfs -c "spark-submit --class com.intersysconsulting.spark.streaming.textfile.WordCountTextFile \
+    --master yarn \
+    --deploy-mode client \
+    /vagrant/spark-streaming-java-1.0-SNAPSHOT.jar \
+    /user/hdfs/sample.txt \
+    yarn-client"
+
+sudo su - hdfs -c "spark-submit --class com.intersysconsulting.spark.streaming.kafka.WordCountKafka \
+    --master yarn \
+    --deploy-mode client \
+    /vagrant/spark-streaming-java-1.0-SNAPSHOT.jar \
+    awesome \
+    10.0.2.2:2181 \
+    yarn-client"
